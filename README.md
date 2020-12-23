@@ -29,7 +29,6 @@ clj -M src/generator.clj
 # with babashka
 brew install borkdude/brew/babashka
 bb -cp src/ src/generator.clj
-bb src/generator.clj
 ```
 
 5. Try the generated VimL files by opening the files in neovim and running `:source %`
