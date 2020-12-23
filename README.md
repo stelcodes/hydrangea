@@ -8,6 +8,7 @@ Features
 * Create a (neo)vim colorscheme with clojure
 * Simple: Configuration goes in `config.clj`, then execute `generator.clj`
 * Support for setting syntax, integrated terminal, and [lightline](https://github.com/itchyny/lightline.vim) colorschemes!
+* Use your fork of this repo as your very own vim package
 
 Limitations
 -----------------------------
