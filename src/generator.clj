@@ -1,6 +1,7 @@
 (ns generator
   (:require [config :refer [colorscheme-name syntax-styles syntax-links terminal-colors lightline-config]]
-            [clojure.string :as str]))
+            [clojure.string :as str]
+            [clojure.java.io :as io]))
 
 ;; Syntax Highlighting Functions
 (defn style->vimscript [[syntax-group style]]
@@ -50,6 +51,12 @@
       ["let s:config={"]
       (map lightline-mode-config->vimscript lightline-config)
       ["\\}" (str "let g:lightline#colorscheme#" colorscheme-name "#palette = lightline#colorscheme#fill(s:config)")])))
+
+;; Clear out existing colorschemes
+(->>
+  (.listFiles (io/file "colors"))
+  (concat (.listFiles (io/file "autoload/lightline/colorscheme")))
+  (run! io/delete-file))
 
 ;; Write vimscript to files
 (def colorscheme-file-path (str "colors/" colorscheme-name ".vim"))
