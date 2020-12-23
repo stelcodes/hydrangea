@@ -1,7 +1,9 @@
-# Neovim Colorscheme Generator
+# neovim colorscheme generator (ft. clojure)
 
+About
+------------------------------
 I use [neovim](https://neovim.io) & [conjure](https://conjure.fun) as the core of my clojure development setup. It's been magical. I've spent hours configuring my vim colorscheme, and I found a great colorscheme in the github repo [yuttie/hydrangea-vim](https://github.com/yuttie/hydrangea-vim) while browsing github search results. The author generated the VimL with a python script. Cool, but I found the code to be unecessarily complex and hard to configure after the fact. I tried to rewrite it in pure VimL but unfortuntely you can't save pass around color values easily. It's actually more ergonomic to use another language to produce the VimL. I've been getting *really* into Clojure in 2020 so I thought:
-> "Can I maintain a vim colorscheme with clojure land?" - stel's brain
+> "Can I maintain a radical vim colorscheme in comfy clojure land?" - stel's brain
 
 Features
 -----------------------------
