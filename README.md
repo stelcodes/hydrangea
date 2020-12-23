@@ -23,10 +23,10 @@ Usage
 4. Execute `generator.clj`
 
 ```bash
-# with JVM clojure
+# with JVM clojure (~1500 ms)
 clj -M src/generator.clj
 
-# with babashka
+# with babashka (~50 ms)
 brew install borkdude/brew/babashka
 bb -cp src/ src/generator.clj
 ```

@@ -70,10 +70,10 @@ hi LineNr guifg=#586374 guibg=#2a303b
 
 " Links
 " ==========
-hi link String Constant
-hi link makeIdent Type
 hi link makeSpecTarget Special
+hi link makeIdent Type
 hi link makeTarget Function
+hi link String Constant
 
 " Terminal Colors
 " ===========
