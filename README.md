@@ -35,20 +35,15 @@ bb src/generator.clj
 " Example for vim-plug users
 Plug '<your-github-username>/neovim-colorscheme-generator'
 ```
-8. Later your init.vim, use your new colorschemes
+8. Later in your init.vim, use your new colorschemes
 ```viml
 " set colorscheme
 colorscheme <your-colorscheme-name>
 
-" If you're using lightline, set colorscheme name in config
-" Example:
+" If you're using lightline, include colorscheme in your config
 let g:lightline = {
       \ 'colorscheme': '<your-colorscheme-name>',
-      \ 'component': {
-      \   'readonly': '%{&readonly?"":""}',
-      \ },
-      \ 'separator':    { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' },
+      " ... the rest of your config ...
       \ }
 ```
 
