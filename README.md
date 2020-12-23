@@ -1,40 +1,49 @@
-# Hydrangea theme
+# Neovim Colorscheme Generator
 
-This repository includes a color scheme file for Vim.
-
-![Screenshot](https://raw.githubusercontent.com/yuttie/hydrangea-vim/gh-pages/screenshot.png)
-![Screenshot for Rust](https://raw.githubusercontent.com/yuttie/hydrangea-vim/gh-pages/screenshot-rust.png)
-
+I use [neovim](https://neovim.io) & [conjure](https://conjure.fun) as the core of my clojure development setup. It's been magical. I've spent hours configuring my vim colorscheme, and I found a great colorscheme in the github repo [yuttie/hydrangea-vim](https://github.com/yuttie/hydrangea-vim) while browsing github search results. The author generated the VimL with a python script. Cool, but I found the code to be unecessarily complex and hard to configure after the fact. I tried to rewrite it in pure VimL but unfortuntely you can't save pass around color values easily. It's actually more ergonomic to use another language to produce the VimL. I've been getting *really* into Clojure in 2020 so I thought:
+> "Can I maintain a vim colorscheme with clojure data structures?"  
+> \- stel's brain
 
 ## Features
 
-* A dark theme with main colors from hydrangea flowers
-* Midnight blue as the background color
-* Support 256 color terminals
-* Includes colorscheme file for [lightline.vim](https://github.com/itchyny/lightline.vim)
-* Customization via colorscheme [generator script](src/hydrangea.py) written in Python
+* Create a (neo)vim colorscheme with clojure
+* Simple: Configuration goes in `config.clj`, then execute `generator.clj`
+* Support for setting syntax, terminal, and [lightline](https://github.com/itchyny/lightline.vim) colorschemes within neovim
 
+## Limitations
+This code does not currently emit CTERM colors. So `termguicolors` must be enabled within neovim. This could be changed in future updates. PR's welcome.
 
-## Installation
+## Usage
 
-### For vim-plug users
-```viml
-Plug 'yuttie/hydrangea-vim'
+1. Fork this repository
+2. Clone onto your machine
+3. Edit `config.clj` with your own color pallete and syntax assignments
+4. Execute `generator.clj`
+```bash
+# with JVM clojure
+clj -M src/generator.clj
+
+# with babashka
+brew install borkdude/brew/babashka
+bb -cp src/ src/generator.clj
+bb src/generator.clj
 ```
-
-### For dein.vim users
+5. Try the generated VimL files by opening the files in neovim and running `:source %`
+6. Push back to Github
+7. Include your colorscheme in your neovim package manager setup
 ```viml
-call dein#add('yuttie/hydrangea-vim')
+" Example for vim-plug users
+Plug '<your-github-username>/neovim-colorscheme-generator'
 ```
-
-## Configuration
-
-### lightline.vim
-[lightline.vim](https://github.com/itchyny/lightline.vim) support is included.
-To use the bundled colorscheme for lightline.vim, specify `'hydrangea'` in a definition of your lightline as follows:
+8. Later your init.vim, use your new colorschemes
 ```viml
+" set colorscheme
+colorscheme <your-colorscheme-name>
+
+" If you're using lightline, set colorscheme name in config
+" Example:
 let g:lightline = {
-      \ 'colorscheme': 'hydrangea',
+      \ 'colorscheme': '<your-colorscheme-name>',
       \ 'component': {
       \   'readonly': '%{&readonly?"":""}',
       \ },
@@ -43,11 +52,5 @@ let g:lightline = {
       \ }
 ```
 
-
 ## Contribution
-Currently, the colors for terminals, i.e. `cterm*` values, are not tested well.
-Please create an issue when you find a problem.
-
-
-## See also
-If you are also interested in a light theme, have a look at my [Inkstained theme](https://github.com/yuttie/inkstained-vim)! 😎
+Please feel free to fork, open issues, etc

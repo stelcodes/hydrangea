@@ -1,5 +1,7 @@
 (ns config)
 
+(def colorscheme-name "hydrangea")
+
 ; Palette
 (def base03    "#1e222c") ; L* = 44
 (def base02    "#2a303b") ; L* = 50

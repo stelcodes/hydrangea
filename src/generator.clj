@@ -1,7 +1,6 @@
-#!/usr/bin/env bb
 (ns generator
-  (:require [config :refer [syntax-styles syntax-links terminal-colors lightline-config]]
-            [clojure.str :as str]))
+  (:require [config :refer [colorscheme-name syntax-styles syntax-links terminal-colors lightline-config]]
+            [clojure.string :as str]))
 
 ;; Syntax Highlighting Functions
 (defn style->vimscript [[syntax-group style]]
@@ -50,15 +49,14 @@
     (concat
       ["let s:config={"]
       (map lightline-mode-config->vimscript lightline-config)
-      ["\\}" "let g:lightline#colorscheme#hydrangea#palette = lightline#colorscheme#fill(s:config)"])))
+      ["\\}" (str "let g:lightline#colorscheme#" colorscheme-name "#palette = lightline#colorscheme#fill(s:config)")])))
 
 ;; Write vimscript to files
-(def colorscheme-file-path "colors/hydrangea.vim")
+(def colorscheme-file-path (str "colors/" colorscheme-name ".vim"))
 (spit colorscheme-file-path main-colorscheme-vimscript)
-(println (str main-colorscheme-vimscript "\n" "Wrote to file: " colorscheme-file-path))
+(println (str "Wrote to file: " colorscheme-file-path))
 
-(print lightline-colorscheme-vimscript)
-(def lightline-colorscheme-file-path "autoload/lightline/colorscheme/hydrangea.vim")
+(def lightline-colorscheme-file-path (str "autoload/lightline/colorscheme/" colorscheme-name ".vim"))
 (spit lightline-colorscheme-file-path lightline-colorscheme-vimscript)
-(println (str "\n" "Wrote to file: " lightline-colorscheme-file-path))
+(println (str "Wrote to file: " lightline-colorscheme-file-path))
 
