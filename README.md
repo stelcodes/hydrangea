@@ -33,10 +33,10 @@ bb -cp src/ src/generator.clj
 
 5. Try the generated `.vim` files by opening them in neovim and running `:source %`
 6. Push back to Github
-7. Install your colorscheme with the neovim package manager of your choice (I use [vim-plug](https://github.com/junegunn/vim-plug)
+7. Install your colorscheme with the neovim package manager of your choice
 
+I use [vim-plug](https://github.com/junegunn/vim-plug):
 ```viml
-" For example, if using vim-plug
 Plug '<your-github-username>/neovim-colorscheme-generator'
 ```
 
