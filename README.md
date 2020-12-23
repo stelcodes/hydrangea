@@ -31,12 +31,12 @@ brew install borkdude/brew/babashka
 bb -cp src/ src/generator.clj
 ```
 
-5. Try the generated VimL files by opening the files in neovim and running `:source %`
+5. Try the generated `.vim` files by opening them in neovim and running `:source %`
 6. Push back to Github
-7. Include your colorscheme in your neovim package manager setup
+7. Install your colorscheme with the neovim package manager of your choice (I use [vim-plug](https://github.com/junegunn/vim-plug)
 
 ```viml
-" Example for vim-plug users
+" For example, if using vim-plug
 Plug '<your-github-username>/neovim-colorscheme-generator'
 ```
 
