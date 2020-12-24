@@ -23,7 +23,7 @@ hi ColorColumn guifg=NONE guibg=#681c36 gui=NONE
 hi WarningMsg guifg=#e91e63 gui=NONE
 hi Directory guifg=#36c2c2 gui=NONE
 hi TabLineFill guifg=#c3d5ec guibg=#1e222c gui=NONE
-hi Title guifg=#996ddb guibg=NONE
+hi Title guifg=#c398fe guibg=NONE
 hi CursorLine guifg=NONE guibg=#2a303b
 hi Structure guifg=#e242ac gui=NONE
 hi VisualNOS gui=underline
