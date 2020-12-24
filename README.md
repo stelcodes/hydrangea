@@ -1,4 +1,6 @@
-# neovim colorscheme generator (ft. clojure)
+neovim colorscheme generator
+==============================
+Configure neovim colors with clojure!
 
 About
 ------------------------------
