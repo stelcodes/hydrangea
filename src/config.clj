@@ -44,7 +44,7 @@
   :VisualNOS       {:deco underline}
   :Folded          {:fg base2 :bg base02}
   :FoldColumn      {:fg base2 :bg base03}
-  :Title           {:fg magenta1 :bg none}
+  :Title           {:fg violet1 :bg none}
   :StatusLine      {:fg base2 :bg base01}
   :StatusLineNC    {:fg base00 :bg base02}
   :VertSplit       {:fg base02 :bg base02}
